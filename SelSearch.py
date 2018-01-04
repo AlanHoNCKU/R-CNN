@@ -63,12 +63,11 @@ def SelectiveSearch():
         img_cut = img.crop((x,y,x+w,y+h))
         img_cut = WarpedRegion(image_size, img_cut)
         img_cut = np.array(img_cut)
-        # plt.imshow(img_cut)
-        # plt.show()
-        img_cut = np.expand_dims(np.array(img_cut, dtype=np.float32), axis=0)
-        img_set = np.concatenate((img_set, img_cut),axis=0)
+        plt.imshow(img)
+        # img_cut = np.expand_dims(np.array(img_cut, dtype=np.float32), axis=0)
+        # img_set = np.concatenate((img_set, img_cut),axis=0)
         i=i+1
-    # plt.show()
+    plt.show()
     # 剪取圖片之集合
     img_set = img_set[1:, :, :]
     model = ResNet50(weights='imagenet')
